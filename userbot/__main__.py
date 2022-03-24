@@ -28,11 +28,11 @@ try:
     call_py.start()
     user = bot.get_me()
     blacklistcilik = requests.get(
-        "https://raw.githubusercontent.com/grey423/Reforestation/master/cilikblacklist.json"
+        "https://raw.githubusercontent.com/wiki28/Reforestation/master/wikiblacklist.json"
     ).json()
     if user.id in blacklistcilik:
         LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @greyyvbss"
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @terserah_wiki"
         )
         sys.exit(1)
 except Exception as e:
@@ -46,7 +46,7 @@ LOGS.info(
     f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/CilikSupport"
 )
 
-LOGS.info(f"Cilik-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+LOGS.info(f"Cilik-Userbot ⚙️ V{BOT_VER} [BOTNYA DAH AKTIF YE BABI]")
 
 
 async def cilik_userbot_on():
@@ -54,12 +54,12 @@ async def cilik_userbot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"🔥 **Cilik-Userbot Berhasil Di Aktifkan** 🔥\n━━━━━━━━━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **untuk Mengecheck Bot**\n━━━━━━━━━━",
+                f"🔥 **Wiki-Userbot Berhasil Di Aktifkan** 🔥\n━━━━━━━━━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **untuk Mengecheck Bot**\n━━━━━━━━━━",
             )
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await bot(JoinChannelRequest("@CilikProject"))
+        await bot(JoinChannelRequest("@WikiTapiChannel"))
     except BaseException:
         pass
     try:
@@ -67,7 +67,7 @@ async def cilik_userbot_on():
     except BaseException:
         pass
     try:
-        await bot(JoinChannelRequest("@CilikSupport"))
+        await bot(JoinChannelRequest("@virtcirclee"))
     except BaseException:
         pass
     
